@@ -291,6 +291,9 @@ pizzahub-api/
 │       └── uploads/
 │
 ├── test/
+│   ├── e2e/
+│   ├── fixtures/
+│   └── jest-e2e.json
 ├── docker-compose.yml
 ├── .env.example
 ├── package.json
@@ -310,7 +313,9 @@ src/modules/<module-name>/
 ├── <module-name>.controller.ts
 ├── admin-<module-name>.controller.ts
 ├── <module-name>.service.ts
+├── <module-name>.service.spec.ts
 ├── <module-name>.repository.ts
+├── <module-name>.repository.spec.ts
 ├── dto/
 │   ├── create-<module-name>.dto.ts
 │   ├── update-<module-name>.dto.ts
@@ -331,7 +336,9 @@ src/modules/products/
 ├── products.controller.ts
 ├── admin-products.controller.ts
 ├── products.service.ts
+├── products.service.spec.ts
 ├── products.repository.ts
+├── products.repository.spec.ts
 ├── dto/
 │   ├── create-product.dto.ts
 │   ├── update-product.dto.ts
@@ -1340,7 +1347,30 @@ Do not store binary images directly in PostgreSQL for this project.
 
 ## 30. Testing Rules
 
-Use Jest for unit tests.
+Use Jest for unit tests and Supertest for end-to-end HTTP tests.
+
+Testing packages used in this repository:
+
+- `jest`
+- `ts-jest`
+- `@types/jest`
+- `@nestjs/testing`
+- `supertest`
+- `@types/supertest`
+
+Testing structure:
+
+- Unit tests live next to the source file they verify, for example `products.service.spec.ts`.
+- End-to-end tests live under `test/e2e/`.
+- Shared test fixtures can live under `test/fixtures/` when needed.
+
+Testing policy:
+
+- Every non-trivial service should include unit tests.
+- Controllers should stay thin and prefer e2e coverage over heavy controller unit tests.
+- Repositories may have unit tests with a mocked `PrismaService`, but critical database flows should eventually gain integration coverage.
+- Every bug fix should include a regression test when practical.
+- Update tests together with DTO, service, repository, and controller changes when behavior changes.
 
 Prioritize tests for:
 
@@ -1360,6 +1390,11 @@ Test file naming:
 Avoid writing tests with `any`.
 
 Use typed mocks.
+
+Recommended minimum coverage for each new feature:
+
+- Service unit tests for success and error paths
+- E2E tests for important public or admin endpoints
 
 ---
 
