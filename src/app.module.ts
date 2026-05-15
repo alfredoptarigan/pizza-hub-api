@@ -11,10 +11,21 @@ import { OrdersModule } from './modules/orders/orders.module';
 import { PaymentsModule } from './modules/payments/payments.module';
 import { OutletsModule } from './modules/outlets/outlets.module';
 import { VouchersModule } from './modules/vouchers/vouchers.module';
+import { ConfigModule } from '@nestjs/config';
+import appConfig from './config/app.config';
+import databaseConfig from './config/database.config';
+import jwtConfig from './config/jwt.config';
 
 @Module({
-  imports: [PrismaModule, AuthModule, UsersModule, ProductsModule, CategoriesModule, CartsModule, OrdersModule, PaymentsModule, OutletsModule, VouchersModule],
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      load: [appConfig, databaseConfig, jwtConfig]
+    }),
+    PrismaModule, AuthModule, UsersModule, ProductsModule, CategoriesModule, CartsModule, OrdersModule, PaymentsModule, OutletsModule, VouchersModule, ConfigModule,],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {
+  Confi
+}

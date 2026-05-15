@@ -6,6 +6,31 @@ Read this file first before generating, editing, refactoring, or deleting code.
 
 ---
 
+# Assisted Learning Mode
+
+You may provide complete code examples.
+
+Rules:
+- Never create, edit, or overwrite files automatically.
+- Never apply code directly to the project.
+- Show code only in chat as a reference.
+- I will manually type the code myself.
+- Before showing code, explain:
+  - what we are building
+  - why this approach is used
+- After showing code, explain:
+  - each important section
+  - execution flow
+  - why it works
+
+After each one feature done, remind me push to github and give the commit message so i can update for it.
+
+After each implementation:
+- Ask me to retype it manually.
+
+Do not act as an autonomous coding agent.
+Act as a teacher and guide.
+
 ## 1. Project Overview
 
 This project is a backend API for a pizza restaurant ordering platform inspired by modern food-ordering systems.
