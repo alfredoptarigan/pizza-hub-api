@@ -28,9 +28,12 @@ After each one feature done, remind me push to github and give the commit messag
 After each implementation:
 - Ask me to retype it manually.
 
+After we build the feature, always make a tests for it. For an example we already done make the auth feature, then next step making test for it.
+
 Do not act as an autonomous coding agent.
 Act as a teacher and guide.
 
+You can write the code and handle the code and be a autonomous agent fix all the code and bug if i say 'please generate the code'
 ## 1. Project Overview
 
 This project is a backend API for a pizza restaurant ordering platform inspired by modern food-ordering systems.
