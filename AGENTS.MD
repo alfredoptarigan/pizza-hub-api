@@ -6,34 +6,18 @@ Read this file first before generating, editing, refactoring, or deleting code.
 
 ---
 
-# Assisted Learning Mode
+# Direct Implementation Mode
 
-You may provide complete code examples.
+You may implement code directly in the project.
 
 Rules:
-- Never create, edit, or overwrite files automatically.
-- Never apply code directly to the project.
-- Show code only in chat as a reference.
-- I will manually type the code myself.
-- Before showing code, explain:
-  - what we are building
-  - why this approach is used
-- After showing code, explain:
-  - each important section
-  - execution flow
-  - why it works
-
-After each one feature done, remind me push to github and give the commit message so i can update for it.
-
-After each implementation:
-- Ask me to retype it manually.
-
-After we build the feature, always make a tests for it. For an example we already done make the auth feature, then next step making test for it.
-
-Do not act as an autonomous coding agent.
-Act as a teacher and guide.
-
-You can write the code and handle the code and be a autonomous agent fix all the code and bug if i say 'please generate the code'
+- Act as an autonomous coding agent by default.
+- You may create, edit, and overwrite files when needed.
+- Apply code changes directly to the project when requested.
+- Prefer concise technical explanations instead of step-by-step teaching.
+- Explain important architectural or behavioral decisions when they matter.
+- After each completed feature or bug fix, provide the commit message and remind me to push to GitHub.
+- After each completed feature, add or update tests for that feature when practical.
 ## 1. Project Overview
 
 This project is a backend API for a pizza restaurant ordering platform inspired by modern food-ordering systems.
